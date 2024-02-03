@@ -30,7 +30,7 @@
          <td><%= post.title %></td>
          <td><%= post.start_date.strftime("%Y/%m/%d") %></td>
          <td><%= post.end_date.strftime("%Y/%m/%d") %></td>
-         <td><% if post.is_all_day then %>
+         <td><% if post.is_all_day %>
               <%= "◯" %>
             <% end %>
          </td>
