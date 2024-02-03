@@ -1,0 +1,33 @@
+<h3>スケジュール詳細</h3>
+
+<table class="text-center">
+  <tr class="row">
+    <th class="col">タイトル</th>
+    <td class="col"><%= @post.title %></td>
+  </tr>
+  <tr class="row">
+    <th class="col">開始日</th>
+    <td class="col"><%= @post.start_date.strftime("%Y/%m/%d") %></td>
+  </tr>
+  <tr class="row">
+    <th class="col">終了日</th>
+    <td class="col"><%= @post.end_date.strftime("%Y/%m/%d") %></td>
+  </tr>
+  <tr class="row">
+    <th class="col">終日</th>
+    <td class="col">
+      <% if @post.is_all_day then %>
+        <%= "◯" %>
+      <% end %>
+    </td>
+  </tr>
+  <tr class="row">
+    <th class="col">スケジュールメモ</th>
+    <td class="col"><%= @post.schedule_memo %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to "キャンセル", :posts %>
+  <%= link_to "編集する", [:edit, @post], class: "btn btn-success btn-lg" %>
+</div>
